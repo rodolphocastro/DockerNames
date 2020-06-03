@@ -1,6 +1,4 @@
 ﻿
-using System.Collections.Generic;
-
 using AutoFixture.Xunit2;
 
 using FluentAssertions;
@@ -11,35 +9,32 @@ namespace DockerNames.Unit
 {
     public class DockerNameFactoryTests
     {
-        [Theory, AutoData]
-        public void ConstructableWithEnumerables(IEnumerable<string> left, IEnumerable<string> right)
+        [Fact]
+        public void ConstructableWithoutParams()
         {
             // Arrange
             DockerNameFactory subject;
 
             // Act
-            subject = new DockerNameFactory(left, right);
+            subject = new DockerNameFactory();
 
             // Assert
             subject.Should().NotBeNull();
         }
 
-        [Theory, AutoData]
-        public void BuildsNames(string leftData, string rightData)
+        [Fact]
+        public void BuildsNames()
         {
-            // Arrange
-            IEnumerable<string> left, right;
-            left = new List<string> { leftData };
-            right = new List<string> { rightData };
-            var subject = new DockerNameFactory(left, right);
+            // Arrange            
+            var subject = DockerNameFactory.Instance;
 
             // Act
-            var result = subject.Build();
+            string result = subject.Build();
 
             // Assert
             result.Should()
-                .Contain(leftData).And
-                .Contain(rightData).And
+                .ContainAny(Personalities.Values).And
+                .ContainAny(Adjectives.Values).And
                 .Contain('_'.ToString());
         }
 
@@ -49,11 +44,25 @@ namespace DockerNames.Unit
             // Arrange
 
             // Act
-            var result = subject.Build(separator);
+            string result = subject.Build(separator);
 
             // Assert
             result.Should()
                 .Contain(separator.ToString());
+        }
+
+        [Fact]
+        public void ReturnsAnElement()
+        {
+            // Arrange
+            var subject = DockerNameFactory.Instance;
+
+            // Act
+            string result = subject.Element;
+
+            // Assert
+            result.Should()
+                .NotBeNull();
         }
     }
 }
