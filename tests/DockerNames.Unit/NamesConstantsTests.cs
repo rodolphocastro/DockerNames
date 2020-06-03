@@ -1,5 +1,4 @@
-﻿
-using FluentAssertions;
+﻿using FluentAssertions;
 
 using Xunit;
 
@@ -12,6 +11,18 @@ namespace DockerNames.Unit
         {
             // Arrange
             var subject = Personalities.Values;
+
+            // Act
+
+            // Assert
+            subject.Should().OnlyHaveUniqueItems();
+        }
+
+        [Fact]
+        public void AdjectivesContainsOnlyUniqueValues()
+        {
+            // Arrange
+            var subject = Adjectives.Values;
 
             // Act
 
