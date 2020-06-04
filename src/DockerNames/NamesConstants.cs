@@ -2,17 +2,15 @@
 // Go to their GitHub and give 'em thanks!
 
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("DockerNames.Unit")]
 namespace DockerNames
 {
     /// <summary>
     /// Personalities (Scientists, Hackers) for "id" generation.
     /// </summary>
-    internal static class Personalities
+    public static class Personalities
     {
-        internal static IEnumerable<string> Values { get; } = new List<string>
+        internal static List<string> _baseNames = new List<string>
         {
             // Muhammad ibn Jābir al-Ḥarrānī al-Battānī was a founding father of astronomy. https://en.wikipedia.org/wiki/Mu%E1%B8%A5ammad_ibn_J%C4%81bir_al-%E1%B8%A4arr%C4%81n%C4%AB_al-Batt%C4%81n%C4%AB
             "albattani",
@@ -727,14 +725,16 @@ namespace DockerNames
 		    // Nikolay Yegorovich Zhukovsky (Russian: Никола́й Его́рович Жуко́вский, January 17 1847 – March 17, 1921) was a Russian scientist, mathematician and engineer, and a founding father of modern aero- and hydrodynamics. Whereas contemporary scientists scoffed at the idea of human flight, Zhukovsky was the first to undertake the study of airflow. He is often called the Father of Russian Aviation. https://en.wikipedia.org/wiki/Nikolay_Yegorovich_Zhukovsky
 		    "zhukovsky"
         };
+
+        public static IEnumerable<string> Values => _baseNames;
     }
 
     /// <summary>
     /// Adjectives for "id" generation.
     /// </summary>
-    internal static class Adjectives
+    public static class Adjectives
     {
-        internal static IEnumerable<string> Values { get; } = new List<string>
+        internal static List<string> _baseAdjectives = new List<string>
         {
             // https://dictionary.cambridge.org/dictionary/english/admiring
             "admiring",
@@ -1060,5 +1060,7 @@ namespace DockerNames
             // https://dictionary.cambridge.org/dictionary/english/zen
             "zen"
         };
+
+        public static IEnumerable<string> Values => _baseAdjectives;
     }
 }
