@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>Rodolpho Alves</Authors>
+    <Company />
+    <Description>Moby's name generation ported to C#</Description>
+    <PackageProjectUrl>https://github.com/rodolphocastro/DockerNames</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rodolphocastro/DockerNames</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>dockernames, docker, name, id generation, id</PackageTags>
   </PropertyGroup>
 
 </Project>
