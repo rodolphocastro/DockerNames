@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("DockerNames.Unit")]
 namespace DockerNames
@@ -8,7 +7,7 @@ namespace DockerNames
     /// Factory for building Docker names.
     /// </summary>
     public class DockerNameFactory : NameFactoryBase
-    {        
+    {
         protected internal DockerNameFactory() : base(Adjectives.Values, Personalities.Values)
         {
 
