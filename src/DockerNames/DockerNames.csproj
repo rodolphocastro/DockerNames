@@ -10,6 +10,15 @@
     <RepositoryUrl>https://github.com/rodolphocastro/DockerNames</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>dockernames, docker, name, id generation, id</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
