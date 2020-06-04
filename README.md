@@ -1,5 +1,7 @@
 ﻿# DockerNames
 
+![.NET Core](https://github.com/rodolphocastro/DockerNames/workflows/.NET%20Core/badge.svg?branch=master)
+
 _DockerNames_ 🐋 is a port for [Moby's name generation](https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go) written in C# and available to the .NET platform.
 
 ## 💭 Inspiration
