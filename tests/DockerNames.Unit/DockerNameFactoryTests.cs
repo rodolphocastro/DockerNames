@@ -64,5 +64,19 @@ namespace DockerNames.Unit
             result.Should()
                 .NotBeNull();
         }
+
+        [Fact]
+        public void CallableAsINameFactory()
+        {
+            // Arrange
+            INameFactory factory = DockerNameFactory.Instance;
+
+            // Act
+
+            // Assert
+            factory.Should()
+                .NotBeNull().And
+                .BeOfType<DockerNameFactory>();
+        }
     }
 }

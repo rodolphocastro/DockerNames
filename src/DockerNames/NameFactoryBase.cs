@@ -7,7 +7,7 @@ namespace DockerNames
     /// <summary>
     /// Base for Name Factories. Inherit this class if you want to customize any aspect of Name Generation.
     /// </summary>
-    public abstract class NameFactoryBase
+    public abstract class NameFactoryBase : INameFactory
     {
         protected readonly IEnumerable<string> _left;
         protected readonly IEnumerable<string> _right;
