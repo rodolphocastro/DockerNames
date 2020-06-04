@@ -6,7 +6,7 @@ namespace DockerNames.CLI
     {
         private static readonly DockerNameFactory _nameFactory = DockerNameFactory.Instance;
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("Generating 10 random docker names using the Element Property!");
             for (int i = 0; i < 10; i++)
